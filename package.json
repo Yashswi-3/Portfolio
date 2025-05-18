@@ -1,0 +1,13 @@
+{
+  "name": "yashwi-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["portfolio", "developer", "3d", "interactive"],
+  "author": "Yashswi Shukla",
+  "license": "MIT",
+  "description": "A dynamic and interactive software developer portfolio website"
+}

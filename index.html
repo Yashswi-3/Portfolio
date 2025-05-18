@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashswi Shukla | Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body class="light-mode">
+    <div class="theme-toggle">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="canvas-container">
+                <canvas id="bg"></canvas>
+            </div>
+            <div class="header-content">
+                <h1>Yashswi Shukla</h1>
+                <h2>Software Developer</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yashswi-shukla-8384ba252/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Yashswi-3" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:yashswishukla@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a Computer Science and Engineering student at Bennett University with a passion for software development, AI, and computer vision. I combine technical expertise with leadership experience to create innovative solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <span>C</span>
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <div class="skill-items">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries</h3>
+                    <div class="skill-items">
+                        <span>NumPy</span>
+                        <span>Pandas</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Concepts</h3>
+                    <div class="skill-items">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>VSCode</span>
+                        <span>Jupyter</span>
+                        <span>OOP</span>
+                        <span>DSA</span>
+                        <span>ML</span>
+                        <span>AI</span>
+                        <span>DBMS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2024 – Jul 2024</div>
+                    <div class="timeline-content">
+                        <h3>Vice Chairperson</h3>
+                        <h4>IEEE WIE, Bennett University</h4>
+                        <ul>
+                            <li>Organized 5+ key events including First-Year Apocalypse, Freshers Orientation, Internship Workshop, and Club Fair, coordinating logistics for 200+ participants across campus.</li>
+                            <li>Developed leadership capabilities by managing 15+ member teams, resolving conflicts, and ensuring smooth execution of all programs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2022 – Dec 2023</div>
+                    <div class="timeline-content">
+                        <h3>Junior Core - PR & Management Team</h3>
+                        <h4>IEEE WIE, Bennett University</h4>
+                        <ul>
+                            <li>Executed 7+ PR campaigns for technical events using social media/email marketing, achieving 95%+ on-time delivery of promotional materials.</li>
+                            <li>Supported 5+ large-scale events by managing vendor communications and participant registrations under tight deadlines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>KholiPoll</h3>
+                        <p class="project-tags">Full-Stack Development, Python, Streamlit</p>
+                        <div class="project-description">
+                            <ul>
+                                <li>Engineered a campus communication web app prototype with 3 interactive modules: real-time event listings, mess feedback system, and announcement feeds</li>
+                                <li>Architected data pipelines using Python + Excel integration, handling 1000+ simulated student/organization entries</li>
+                                <li>Developed responsive UI via Streamlit with role-based access control for students/staff demonstration purposes</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Yashswi-3/Khollpoll.git" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Suraksha Dristi</h3>
+                        <p class="project-tags">AI Security System, Computer Vision</p>
+                        <div class="project-description">
+                            <ul>
+                                <li>Built real-time gesture recognition (5+ signs) using MediaPipe/OpenCV, achieving 85% accuracy and 18 FPS processing on edge devices</li>
+                                <li>Integrated face detection + distress alerts (Haar Cascade) with IP/webcam support, reducing emergency response time by 40% in safe zones</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Yashswi-3/Surksha-Dristi.git" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Enhancing Face Detection in Low-Light Conditions</h3>
+                        <p class="project-tags">Computer Vision Research</p>
+                        <div class="project-description">
+                            <ul>
+                                <li>Published paper at ICCSAI 2025 analyzing noise impacts (Gaussian/Poisson/salt-and-pepper) on facial recognition accuracy</li>
+                                <li>Benchmarked 4 denoising methods(Median, NLM, Wavelet, DnCNN) using PSNR/SSIM/MSE metrics, validating DnCNN's superiority (32.45 PSNR) on Dark Face Dataset.</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Yashswi-3/Enhancing-Face-Detection-in-Low-Light-Conditions---Denoising-Techniques.git" class="project-link"><i class="fas fa-file-alt"></i> View Code</a>
+                            <a href="https://github.com/Yashswi-3/Enhancing-Face-Detection-in-Low-Light-Conditions---Denoising-Techniques/blob/main/Enhancing%20Face%20Detection%20in%20Low-Light%20Conditions%20An%20Analysis%20of.pdf" class="project-link"><i class="fab fa-github"></i> View Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>Bennett University (Times Of India Group)</h3>
+                <p>B.Tech - Computer Science and Engineering</p>
+                <p>CGPA: 8.78</p>
+                <p>2022 – 2026</p>
+                <p>Greater Noida, Uttar Pradesh</p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-container">
+                <div class="certification-item">Object-Oriented Data Structures in C++</div>
+                <div class="certification-item">The Bits and Bytes of Computer Networking</div>
+                <div class="certification-item">Probability & Statistics for Machine Learning & Data Science</div>
+                <div class="certification-item">Data Structures (by University of California San Diego)</div>
+                <div class="certification-item">Improving Deep Neural Networks (by DeepLearning.ai)</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Gautam Buddha Nagar, Uttar Pradesh</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91-8368528828</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>yashswishukla@gmail.com</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yashswi Shukla. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
