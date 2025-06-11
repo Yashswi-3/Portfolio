@@ -590,11 +590,15 @@ section {
 
 /* Footer */
 footer {
-    background-color: var(--card-bg-color);
-    padding: 20px 0;
+    width: 100vw;              /* Make footer as wide as the viewport */
+    min-width: 100vw;
+    margin-left: calc(50% - 50vw); /* Center the footer if the body is centered */
+    background: #18181b;       /* Or your preferred footer background */
+    padding: 16px 0;           /* Adjust as needed */
     text-align: center;
-    margin-top: 50px;
+    box-sizing: border-box;
 }
+
 
 footer p {
     color: var(--text-secondary);

@@ -133,7 +133,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Yashswi-3/Khollpoll.git" class="project-link"><i class="fab fa-github"></i> View Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://yashswi-3-khollpoll-campus-hub-app-gnr2nq.streamlit.app/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -196,41 +196,45 @@
             </div>
         </section>
 
-        <section id="contact">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Gautam Buddha Nagar, Uttar Pradesh</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+91-8368528828</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>yashswishukla@gmail.com</p>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+        <!-- Include EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Gautam Buddha Nagar, Uttar Pradesh</p>
             </div>
-        </section>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+91-8368528828</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>yashswishukla@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- ✅ Add ID and proper names -->
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
     </div>
+</section>
 
     <footer>
         <p>&copy; 2024 Yashswi Shukla. All Rights Reserved.</p>

@@ -142,19 +142,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = document.getElementById('name')?.value;
-        const email = document.getElementById('email')?.value;
-        const subject = document.getElementById('subject')?.value;
-        const message = document.getElementById('message')?.value;
-        console.log('Form submitted:', { name, email, subject, message });
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
-}
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_689y1ep', 'template_3mlk4sy', this)
+      .then(() => {
+          alert('Thank you for your message! I will get back to you soon.');
+          contactForm.reset();
+      })
+      .catch((error) => {
+          alert('Oops! Something went wrong, please try again.');
+          console.error('EmailJS error:', error);
+      });
+});
+
 
 // Scroll reveal effect
 function revealOnScroll() {
