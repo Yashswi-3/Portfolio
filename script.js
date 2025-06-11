@@ -202,3 +202,14 @@ function typeEffect() {
     }, 100);
 }
 window.addEventListener('load', typeEffect);
+
+// Scroll-activated navbar
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('main-navbar');
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
