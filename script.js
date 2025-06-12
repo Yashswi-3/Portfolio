@@ -45,7 +45,7 @@ function initThreeJSBackground() {
     // Add lighting
     scene.add(new THREE.AmbientLight(0xffffff, 0.5));
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 5, 5);
+    directionalLight.position.set(5, 5, 6);
     scene.add(directionalLight);
 
     // Particles
@@ -82,7 +82,7 @@ function initThreeJSBackground() {
     addShape(new THREE.TorusKnotGeometry(0.3, 0.1, 64, 8), 0xff6b6b, [1.5, 1.5, -3]);
     addShape(new THREE.IcosahedronGeometry(0.35), 0x6a11cb, [-1.5, -1.2, -2.5]);
 
-    camera.position.z = 3;
+    camera.position.z = 4;
 
     // Mouse tracking
     let mouseX = 0, mouseY = 0;
@@ -126,6 +126,9 @@ function initThreeJSBackground() {
     animate();
 }
 window.addEventListener('load', initThreeJSBackground);
+
+window.addEventListener('load', loadGLBModel);
+
 
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -212,4 +215,56 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
+
+
+// GLB Model Loader
+function loadGLBModel() {
+    const container = document.getElementById('model-container');
+    if (!container) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    scene.add(light);
+
+    camera.position.set(0, 1.5, 3);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+    controls.autoRotate = false;
+    controls.enableRotate = true; // Disables manual rotation
+    controls.enableZoom = false;   // Optional: disables zoom
+    controls.enablePan = true;    // Optional: disables dragging
+
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.9);
+    scene.add(ambientLight);
+
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+        'Character_with_a_Boar_0612013041_texture.glb',
+        function (gltf) {
+            const model = gltf.scene;
+            model.scale.set(1.4,1.4,1.4); // adjust as needed
+            model.position.set(0, -0.10, 0); // adjust Y to fix vertical alignment
+            model.rotation.set(-0.4, 0, 0); // no rotation
+            scene.add(model);
+        },
+        undefined,
+        function (error) {
+            console.error('GLB model load error:', error);
+        }
+    );
+
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
+}
 

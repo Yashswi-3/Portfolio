@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body class="light-mode">
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5">
@@ -41,33 +44,29 @@
     </div>
 
     <div class="container">
-        <header>
+        <header class="hero">
             <div class="canvas-container">
                 <canvas id="bg"></canvas>
             </div>
+            <div class="hero-person-container">
+                <div id="model-container" style="width:800px;height:800px;"></div>
 
-            <div class="header-content">
+                <div class="hero-content-on-board">
                 <h1>Yashswi Shukla</h1>
                 <h2>Software Developer</h2>
-
                 <div class="social-links">
-                <div class="icon-row">
-                    <a href="https://www.linkedin.com/in/yashswi-shukla-8384ba252/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Yashswi-3" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:yashswishukla@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="Yashswi_Shukla_CV.pdf" download aria-label="Download CV">
-                    <i class="fas fa-file-download"></i>
-                    </a>
+                    <div class="icon-row">
+                    <a href="https://www.linkedin.com/in/yashswi-shukla-8384ba252/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Yashswi-3" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:yashswishukla@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="Yashswi_Shukla_CV.pdf" download aria-label="Download CV"><i class="fas fa-file-download"></i></a>
+                    </div>
                 </div>
                 </div>
             </div>
         </header>
+
+
 
 
 
