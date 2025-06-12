@@ -236,7 +236,7 @@ function loadGLBModel() {
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
     controls.autoRotate = false;
-    controls.enableRotate = true; // Disables manual rotation
+    controls.enableRotate = false; // Disables manual rotation
     controls.enableZoom = false;   // Optional: disables zoom
     controls.enablePan = true;    // Optional: disables dragging
 
