@@ -950,7 +950,7 @@ header {
 
 .header-content {
   text-align: center;
-  z-index: 1;
+  /* z-index: 1; */
   padding: 35px;
   background-color: rgba(var(--card-bg-color-rgb), 0.8);
   border-radius: 10px;
