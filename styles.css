@@ -834,11 +834,13 @@ body {
 
 
 /* --- Main navbar --- */
+/* --- Main Navbar --- */
 #main-navbar {
   background: transparent !important;
   box-shadow: none;
   top: -90px;
   transition: background 0.4s, box-shadow 0.4s, top 0.4s;
+  z-index: 1000;
 }
 
 #main-navbar.scrolled {
@@ -847,11 +849,12 @@ body {
   top: 0;
 }
 
-/* --- Branding and Nav Links --- */
+/* Branding and Links */
 #main-navbar .navbar-brand,
 #main-navbar .nav-link {
   color: var(--text-secondary) !important;
   transition: color 0.3s;
+  font-size: 1rem;
 }
 
 #main-navbar .nav-link:hover,
@@ -860,16 +863,38 @@ body {
   font-weight: 700;
 }
 
-/* --- Nav Container Layout --- */
+/* Layout for nav container */
 .navbar-nav {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
   width: 100%;
-  height: 50px;
   margin: 0 auto;
+  padding: 0;
 }
+
+/* Responsive: stack links on small screens */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    gap: 16px;
+  }
+
+  #main-navbar .nav-link {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+  }
+}
+
 
 
 
