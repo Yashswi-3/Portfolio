@@ -245,15 +245,16 @@ header {
 }
 
 .hero-content-on-board h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 400;
     color : #6d8dff;
 }
 
 .hero-content-on-board h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
     margin-bottom: 20px;
+    color: white;
 }
 
 
@@ -265,8 +266,10 @@ header {
 }
 
 .hero-content-on-board .icon-row a {
-    color: var(--text-color);
-    font-size: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  color: white;
+  transition: all var(--transition-speed);
 }
 
 .hero-content-on-board .icon-row a:hover {
