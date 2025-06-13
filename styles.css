@@ -218,12 +218,13 @@ header {
   height: 100%;
   object-fit: contain;
   display: block;
+  
 }
 
 .hero-content-on-board {
   position: absolute;
   top: 63.5%; /* Adjust this to match the board */
-  left: 45%; /* Center horizontally */
+  left: 45.5%; /* Center horizontally */
   transform: translate(-50%, -50%);
   width: 350px;
   text-align: center;
@@ -236,24 +237,27 @@ header {
 
 .hero-content-on-board h1 {
     font-size: 2.4rem;
-    margin-bottom: 10px;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 800;
+      margin-top:17px;
+
 }
 
 .hero-content-on-board h2 {
     font-size: 1.7rem;
     font-weight: 400;
     color : #6d8dff;
+      margin-top:15px;
+
 }
 
 .hero-content-on-board h3 {
     font-size: 1.3rem;
     font-weight: 400;
-    margin-bottom: 20px;
+  margin-top:15px;
     color: white;
 }
 
@@ -261,8 +265,8 @@ header {
 .hero-content-on-board .icon-row {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top:10px;
+  gap: 19px;
+  margin-top:17px;
 }
 
 .hero-content-on-board .icon-row a {
