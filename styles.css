@@ -57,7 +57,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 99%;
   max-width: 1600px;
   margin: 0 auto;
   position: relative;
@@ -207,34 +207,53 @@ header {
   align-items: flex-start;
 }
 
-.hero-content-on-board {
-  position: absolute;
-  top: 62.5%;          
-  left: 47%;            
-  transform: translate(-50%, -50%); 
-  background-color: rgba(var(--card-bg-color-rgb), 3);
-  width: 300px;       
-  text-align: center;
-  z-index: 0;
-  color: var(--text-color);
-  padding: 12px 8px 8px 8px;
-  border-radius: 6px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+.image-wrapper {
+  position: relative;
+  width: 500px;
+  height: 700px;
 }
 
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-content-on-board {
+  position: absolute;
+  top: 63.5%; /* Adjust this to match the board */
+  left: 45%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  width: 350px;
+  text-align: center;
+  padding: 12px 10px 8px 8px;
+  border-radius: 6px;
+  z-index: 2;
+
+}
+
+
 .hero-content-on-board h1 {
-  font-size: 1.95rem;
-  font-weight: bold;
-  margin: 0 0 4px 0;
-  letter-spacing: 1px;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
 }
 
 .hero-content-on-board h2 {
-  font-size: 1.35rem;
-  font-weight: 500;
-  margin: 0 0 10px 0;
-  letter-spacing: 0.5px;
-  margin-top:10px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color : #6d8dff;
+}
+
+.hero-content-on-board h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
 
@@ -246,14 +265,13 @@ header {
 }
 
 .hero-content-on-board .icon-row a {
-  color: #fff;
-  font-size: 1.3rem;
-  transition: color 0.2s;
+    color: var(--text-color);
+    font-size: 1.5rem;
 }
 
 .hero-content-on-board .icon-row a:hover {
-  color: #0d6efd;
-}
+    color: var(--primary-color);
+    transform: translateY(-3px);}
 
 /* Section Styles */
 section {
@@ -277,7 +295,7 @@ section {
     transform: translateX(-50%);
     width: 70px;
     height: 4px;
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    /* background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); */
     border-radius: 2px;
 }
 
@@ -514,7 +532,6 @@ canvas {
     position: relative;
     left: auto !important;
     right: auto !important;
-    /* margin: 10px 0 20px 0 !important; */
     text-align: center;
     display: block;
     transform: none;
