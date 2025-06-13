@@ -142,21 +142,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form submission
-const contactForm = document.getElementById('contact-form');
+(function () {
+  emailjs.init("V9FUbVugnWPN5QSsq"); // 🔁 Replace with your actual public key
+})();
 
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
 
-    emailjs.sendForm('service_689y1ep', 'template_3mlk4sy', this)
-      .then(() => {
-          alert('Thank you for your message! I will get back to you soon.');
-          contactForm.reset();
-      })
-      .catch((error) => {
-          alert('Oops! Something went wrong, please try again.');
-          console.error('EmailJS error:', error);
-      });
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_lym9hkq", "template_gobzfaa", this)
+        .then(function () {
+          alert("✅ Message sent successfully!");
+          form.reset();
+        }, function (error) {
+          alert("❌ Failed to send message: " + error.text);
+        });
+    });
+  }
 });
+
 
 // Scroll reveal effect
 function revealOnScroll() {
