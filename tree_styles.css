@@ -1,0 +1,61 @@
+/* Experience Tree Styling */
+.experience-tree {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 20px;
+    border-left: 2px solid var(--border-color);
+}
+
+.tree-node {
+    position: relative;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.tree-node::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    /* Adjust to align with the border */
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--card-bg-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.tree-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.tree-node ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.tree-node ul li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 6px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.tree-node ul li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Ensure the last node doesn't have extra margin if not needed */
+.tree-node:last-child {
+    margin-bottom: 0;
+}
