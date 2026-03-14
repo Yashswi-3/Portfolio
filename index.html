@@ -4,25 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yashswi Shukla — CS student, product manager, and full-stack developer. Portfolio showcasing projects, experience, and research.">
     <title>Yashswi Shukla</title>
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Three.js (deferred — non-blocking) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" defer></script>
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body && document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
 </head>
 
 <body class="light-mode">
+
+    <!-- ===================== NAVBAR ===================== -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top px-3 px-lg-5">
         <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <img src="logo.png" alt="Logo" style="height: 40px;" />
+            <img src="logo.png" alt="Yashswi Shukla Logo" style="height: 40px;" />
         </a>
-
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,58 +42,62 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <a href="index.html" class="navbar-brand d-none d-lg-block">
-                <img src="logo.png" alt="Logo" style="height: 40px;" />
+                <img src="logo.png" alt="Yashswi Shukla Logo" style="height: 40px;" />
             </a>
 
             <div class="navbar-nav ms-auto me-auto py-2 py-lg-0">
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#skills" class="nav-item nav-link">Skills</a>
-                <a href="#experience" class="nav-item nav-link">Experience</a>
-                <a href="#projects" class="nav-item nav-link">Projects</a>
-                <a href="#education" class="nav-item nav-link">Education</a>
+                <a href="#about"          class="nav-item nav-link">About</a>
+                <a href="#skills"         class="nav-item nav-link">Skills</a>
+                <a href="#experience"     class="nav-item nav-link">Experience</a>
+                <a href="#projects"       class="nav-item nav-link">Projects</a>
+                <a href="#education"      class="nav-item nav-link">Education</a>
                 <a href="#certifications" class="nav-item nav-link">Certifications</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
+                <a href="#contact"        class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
-
-
-
-
-    <div class="theme-toggle">
+    <!-- ===================== THEME TOGGLE ===================== -->
+    <button class="theme-toggle" aria-label="Toggle dark/light theme">
         <i class="fas fa-moon" id="theme-icon"></i>
-    </div>
+    </button>
 
     <div class="container">
+
+        <!-- ===================== HERO ===================== -->
         <header class="hero">
             <div class="canvas-container">
                 <canvas id="bg"></canvas>
             </div>
             <div class="hero-person-container">
                 <div class="image-wrapper">
-                    <img src="Main_img.png" alt="Main Image" class="main-image">
+                    <img src="Main_img.png" alt="Yashswi Shukla" class="main-image">
                     <div class="hero-content-on-board">
                         <h1>Yashswi Shukla</h1>
                         <h3>Open For Work</h3>
                         <div class="icon-row">
-                            <a href="https://www.linkedin.com/in/yashswi-shukla-8384ba252/" target="_blank"><i
-                                    class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/Yashswi-3" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="mailto:yashswishukla@gmail.com"><i class="fas fa-envelope"></i></a>
-                            <a href="https://yashswishukla-resume.tiiny.site" download><i
-                                    class="fas fa-file-download"></i></a>
+                            <a href="https://www.linkedin.com/in/yashswi-shukla-8384ba252/" target="_blank"
+                               rel="noopener noreferrer" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Yashswi-3" target="_blank"
+                               rel="noopener noreferrer" aria-label="GitHub profile">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:yashswishukla@gmail.com" aria-label="Send email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://yashswishukla-resume.tiiny.site" target="_blank"
+                               rel="noopener noreferrer" aria-label="View resume">
+                                <i class="fas fa-file-download"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-
-
-
-
-
+        <!-- ===================== ABOUT ===================== -->
         <section id="about">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
@@ -95,12 +110,11 @@
                         the complete product lifecycle for both their website and mobile application — from translating
                         ideas into structured requirements to coordinating with developers, conducting UAT, and
                         supporting post-launch operations. This experience taught me how to bridge the gap between
-                        vision and execution while managing cross-functional teams in a fast-paced startup environment.
-                    </p>
+                        vision and execution while managing cross-functional teams in a fast-paced startup environment.</p>
 
                     <p>I enjoy building products that solve real problems. Whether it's developing a full-stack project
-                        solving Universty issues, or publishing research
-                        on AI-driven face detection, I focus on creating impact through technology.</p>
+                        solving University issues, or publishing research on AI-driven face detection, I focus on
+                        creating impact through technology.</p>
 
                     <p>Beyond technical work, I've led university-level events as Vice Chairperson of IEEE WIE and won
                         recognition for social impact projects like "Nayi Udaan" at the UNICEF Youth Challenge.</p>
@@ -113,7 +127,7 @@
             </div>
         </section>
 
-
+        <!-- ===================== SKILLS ===================== -->
         <section id="skills">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-container">
@@ -167,7 +181,7 @@
                         <span>Computer Vision</span>
                         <span>Natural Language Processing</span>
                         <span>Machine Learning</span>
-                        <span>Data Structures & Algorithms</span>
+                        <span>Data Structures &amp; Algorithms</span>
                         <span>OOP</span>
                         <span>API Integration</span>
                         <span>ATS Optimization</span>
@@ -176,50 +190,44 @@
             </div>
         </section>
 
-
+        <!-- ===================== EXPERIENCE ===================== -->
         <section id="experience">
             <h2 class="section-title">Experience</h2>
-            <!-- Skillcase Section -->
-            <h3
-                style="text-align: center; color: var(--primary-color); margin: 40px 0 30px 0; font-size: 1.8rem; position: relative; z-index: 2;">
-                Skillcase<br><span style="font-size: 1.2rem; display: block; margin-top: 5px;">Founder Office
-                    Internship</span></h3>
+
+            <!-- Skillcase -->
+            <h3 class="experience-org-heading">
+                Skillcase<br>
+                <span class="experience-org-subheading">Founder Office Internship</span>
+            </h3>
             <div class="timeline">
-                <!-- CHUNK 1: Skillcase Mobile Application & QA -->
+
                 <div class="timeline-item">
                     <div class="timeline-date">Aug 2025 -- Jan 2026</div>
                     <div class="timeline-content">
                         <h3>Product Owner - Skillcase App Development</h3>
-                        <p
-                            style="margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; color: var(--primary-color);">
-                            Skillcase Mobile Application & Testing</p>
+                        <p class="timeline-sublabel">Skillcase Mobile Application &amp; Testing</p>
                         <p>Led the complete product development of Skillcase's Android learning application from concept
-                            to Play Store launch, while ensuring strict quality standards through comprehensive testing.
-                        </p>
+                            to Play Store launch, while ensuring strict quality standards through comprehensive testing.</p>
                         <ul>
-                            <li>Converted founder's vision into detailed requirements for V1,
-                                V2, and V3 iterations</li>
+                            <li>Converted founder's vision into detailed requirements for V1, V2, and V3 iterations</li>
                             <li>Managed the end-to-end rollout, aligning the app with finalized UI/UX designs and
                                 teaching requirements</li>
                             <li>Conducted rigorous functional and User Acceptance Testing (UAT) for the mobile app to
                                 identify and resolve bugs</li>
                             <li>Validated real user flows post-release to ensure a smooth student experience</li>
-                            <li>Served as the primary bridge between founders, developers, and end users
-                                throughout all iterations</li>
+                            <li>Served as the primary bridge between founders, developers, and end users throughout all
+                                iterations</li>
                         </ul>
-                        <p class="impact" style="margin-top: 10px; font-weight: 600;">Impact: Successfully launched a
-                            fully functional, bug-free learning app serving active students and teachers</p>
+                        <p class="impact">Impact: Successfully launched a fully functional, bug-free learning app
+                            serving active students and teachers</p>
                     </div>
                 </div>
 
-                <!-- CHUNK 2: Skillcase Website Development & QA -->
                 <div class="timeline-item">
                     <div class="timeline-date">Aug 2025 -- Jan 2026</div>
                     <div class="timeline-content">
                         <h3>Product Manager - Skillcase Website Development</h3>
-                        <p
-                            style="margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; color: var(--primary-color);">
-                            Skillcase Website Development & Testing</p>
+                        <p class="timeline-sublabel">Skillcase Website Development &amp; Testing</p>
                         <p>Managed the end-to-end product lifecycle for Skillcase's website across two major versions,
                             overseeing both development and quality assurance.</p>
                         <ul>
@@ -229,22 +237,18 @@
                             <li>Performed regression testing and identified UI gaps for the web platform to ensure
                                 seamless performance</li>
                             <li>Provided post-deployment support and documented issues for developer resolution</li>
-                            <li>Coordinated between founder and development team to ensure clarity and timely delivery
-                            </li>
+                            <li>Coordinated between founder and development team to ensure clarity and timely delivery</li>
                         </ul>
-                        <p class="impact" style="margin-top: 10px; font-weight: 600;">Impact: Delivered a robust,
-                            responsive web platform with high stability and user-friendly navigation</p>
+                        <p class="impact">Impact: Delivered a robust, responsive web platform with high stability and
+                            user-friendly navigation</p>
                     </div>
                 </div>
 
-                <!-- CHUNK 4: Class Operations & Student Management -->
                 <div class="timeline-item">
                     <div class="timeline-date">Aug 2025 -- Jan 2026</div>
                     <div class="timeline-content">
                         <h3>Operations Manager - Academic Workflows</h3>
-                        <p
-                            style="margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; color: var(--primary-color);">
-                            Class Operations & Student Management</p>
+                        <p class="timeline-sublabel">Class Operations &amp; Student Management</p>
                         <p>Managed day-to-day academic operations and student lifecycle management while supporting live
                             class delivery and teacher coordination.</p>
                         <ul>
@@ -253,19 +257,16 @@
                             <li>Served as primary point of contact for student communication and issue resolution</li>
                             <li>Coordinated with teachers to ensure smooth delivery of live German language classes</li>
                         </ul>
-                        <p class="impact" style="margin-top: 10px; font-weight: 600;">Impact: Ensured consistent
-                            operational excellence and positive student experience throughout their learning journey</p>
+                        <p class="impact">Impact: Ensured consistent operational excellence and positive student
+                            experience throughout their learning journey</p>
                     </div>
                 </div>
 
-                <!-- CHUNK 5: Content Creation & Social Media -->
                 <div class="timeline-item">
                     <div class="timeline-date">Aug 2025 -- Jan 2026</div>
                     <div class="timeline-content">
                         <h3>Content Creation</h3>
-                        <p
-                            style="margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; color: var(--primary-color);">
-                            Content Creation & Social Media</p>
+                        <p class="timeline-sublabel">Content Creation &amp; Social Media</p>
                         <p>Created and managed Skillcase's Instagram content strategy, producing 17-20 posts focused on
                             education, awareness, and student engagement.</p>
                         <ul>
@@ -275,18 +276,20 @@
                             <li>Used Canva for final video editing and post design</li>
                             <li>Aligned all content with Skillcase's brand voice and target audience needs</li>
                         </ul>
-                        <p class="impact" style="margin-top: 10px; font-weight: 600;">Impact: Built social media
-                            presence and engaged prospective students through compelling educational content</p>
+                        <p class="impact">Impact: Built social media presence and engaged prospective students through
+                            compelling educational content</p>
                     </div>
                 </div>
 
-            </div>
-            <!-- IEEE Section -->
-            <h3
-                style="text-align: center; color: var(--primary-color); margin: 40px 0 30px 0; font-size: 1.8rem; position: relative; z-index: 2;">
-                IEEE WIE<br><span style="font-size: 1.2rem; display: block; margin-top: 5px;">Bennett University</span>
+            </div><!-- /.timeline (Skillcase) -->
+
+            <!-- IEEE WIE -->
+            <h3 class="experience-org-heading">
+                IEEE WIE<br>
+                <span class="experience-org-subheading">Bennett University</span>
             </h3>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-date">Jan 2024 – Jul 2024</div>
                     <div class="timeline-content">
@@ -294,19 +297,18 @@
                         <h4>IEEE WIE</h4>
                         <ul>
                             <li>Organized 5+ key events including First-Year Apocalypse, Freshers Orientation,
-                                Internship Workshop, and Club Fair, coordinating logistics for 200+ participants
-                                across
+                                Internship Workshop, and Club Fair, coordinating logistics for 200+ participants across
                                 campus.</li>
-                            <li>Developed leadership capabilities by managing 15+ member teams, resolving conflicts,
-                                and
+                            <li>Developed leadership capabilities by managing 15+ member teams, resolving conflicts, and
                                 ensuring smooth execution of all programs.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-date">Aug 2022 – Dec 2023</div>
                     <div class="timeline-content">
-                        <h3>Junior Core - PR & Management Team</h3>
+                        <h3>Junior Core - PR &amp; Management Team</h3>
                         <h4>IEEE WIE</h4>
                         <ul>
                             <li>Executed 7+ PR campaigns for technical events using social media/email marketing,
@@ -316,10 +318,11 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+
+            </div><!-- /.timeline (IEEE) -->
         </section>
 
-
+        <!-- ===================== PROJECTS ===================== -->
         <section id="projects">
             <h2 class="section-title">Projects</h2>
             <div class="projects-container">
@@ -339,11 +342,12 @@
                             </ul>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Yashswi-3/Khollpoll.git" class="project-link">
+                            <a href="https://github.com/Yashswi-3/Khollpoll.git" class="project-link"
+                               target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                             <a href="https://yashswi-3-khollpoll-campus-hub-app-gnr2nq.streamlit.app/"
-                                class="project-link">
+                               class="project-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
@@ -363,7 +367,8 @@
                             </ul>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Yashswi-3/Surksha-Dristi.git" class="project-link">
+                            <a href="https://github.com/Yashswi-3/Surksha-Dristi.git" class="project-link"
+                               target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                             <a href="#" class="project-link">
@@ -387,11 +392,11 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Yashswi-3/Enhancing-Face-Detection-in-Low-Light-Conditions---Denoising-Techniques.git"
-                                class="project-link">
+                               class="project-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-file-alt"></i> View Code
                             </a>
                             <a href="https://github.com/Yashswi-3/Enhancing-Face-Detection-in-Low-Light-Conditions---Denoising-Techniques/blob/main/Enhancing%20Face%20Detection%20in%20Low-Light%20Conditions%20An%20Analysis%20of.pdf"
-                                class="project-link">
+                               class="project-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Paper
                             </a>
                         </div>
@@ -411,7 +416,8 @@
                             </ul>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Yashswi-3/Narrative.git" class="project-link">
+                            <a href="https://github.com/Yashswi-3/Narrative.git" class="project-link"
+                               target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                             <a href="#" class="project-link">
@@ -430,22 +436,21 @@
                                 <li>Displays interactive stories with pagination</li>
                                 <li>Provides rich multimedia experience with text, images, and atmospheric details</li>
                                 <li>Features character perspectives and a deep connection to setting and plot</li>
-                                <li>Built with Streamlit and PIL (Python Image Library) for simplicity and creativity
-                                </li>
+                                <li>Built with Streamlit and PIL (Python Image Library) for simplicity and creativity</li>
                             </ul>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
                                 <i class="fab fa-github"></i> View Code
                             </a>
-                            <a href=" https://nfezs2nnn6jrwngllfkl2c.streamlit.app/" class="project-link">
+                            <a href="https://nfezs2nnn6jrwngllfkl2c.streamlit.app/" class="project-link"
+                               target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- New Project: AI Resume Builder -->
                 <div class="project-card">
                     <div class="project-content">
                         <h3>AI Resume Builder</h3>
@@ -463,19 +468,22 @@
                             </ul>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Yashswi-3/AI_Resume_Builder" class="project-link">
+                            <a href="https://github.com/Yashswi-3/AI_Resume_Builder" class="project-link"
+                               target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
-                            <a href="https://yashswi-3-ai-resume-builder.streamlit.app/" class="project-link">
+                            <a href="https://yashswi-3-ai-resume-builder.streamlit.app/" class="project-link"
+                               target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
+
+            </div><!-- /.projects-container -->
         </section>
 
-
+        <!-- ===================== EDUCATION ===================== -->
         <section id="education">
             <h2 class="section-title">Education</h2>
             <div class="education-card">
@@ -487,39 +495,38 @@
             </div>
         </section>
 
+        <!-- ===================== CERTIFICATIONS ===================== -->
         <section id="certifications">
             <h2 class="section-title">Certifications</h2>
             <div class="certifications-container">
                 <div class="certification-item">Object-Oriented Data Structures in C++</div>
                 <div class="certification-item">The Bits and Bytes of Computer Networking</div>
-                <div class="certification-item">Probability & Statistics for Machine Learning & Data Science</div>
+                <div class="certification-item">Probability &amp; Statistics for Machine Learning &amp; Data Science</div>
                 <div class="certification-item">Data Structures (by University of California San Diego)</div>
                 <div class="certification-item">Improving Deep Neural Networks (by DeepLearning.ai)</div>
             </div>
         </section>
 
-        <!-- Include EmailJS SDK -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+        <!-- ===================== CONTACT ===================== -->
         <section id="contact">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <p>Gautam Buddha Nagar, Uttar Pradesh</p>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <p>+91-8368528828</p>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <p>yashswishukla@gmail.com</p>
                     </div>
                 </div>
 
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" novalidate>
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required />
                     </div>
@@ -537,14 +544,17 @@
             </div>
         </section>
 
+    </div><!-- /.container -->
 
-        <footer>
-            <p>&copy; 2024 Yashswi Shukla. All Rights Reserved.</p>
-        </footer>
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <p>&copy; 2025 Yashswi Shukla. All Rights Reserved.</p>
+    </footer>
 
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Scripts — loaded at end of body for performance -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="script.js" defer></script>
 
 </body>
 

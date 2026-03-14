@@ -1,10 +1,13 @@
-/* Base Styles and Variables */
+/* ============================================================
+   Base Styles and CSS Custom Properties
+   ============================================================ */
 :root {
     --primary-color: #4a6cf7;
+    --primary-color-rgb: 74, 108, 247;        /* for rgba() usage */
     --secondary-color: #6c757d;
-    --accent-color: #ff6b6b;
     --background-color: #f8f9fa;
     --card-bg-color: #ffffff;
+    --card-bg-color-rgb: 255, 255, 255;        /* for rgba() usage */
     --text-color: #212529;
     --text-secondary: #6c757d;
     --border-color: #e9ecef;
@@ -13,18 +16,16 @@
     --gradient-end: #6a11cb;
     --transition-speed: 0.3s;
     --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Roboto', sans-serif;
     --navbar-bg-color-rgb: 255, 255, 255;
-    /* for navbar only */
-
 }
 
 .dark-mode {
     --primary-color: #6d8dff;
+    --primary-color-rgb: 109, 141, 255;
     --secondary-color: #adb5bd;
-    --accent-color: #ff8585;
     --background-color: #121212;
     --card-bg-color: #1e1e1e;
+    --card-bg-color-rgb: 30, 30, 30;
     --text-color: #f8f9fa;
     --text-secondary: #adb5bd;
     --border-color: #2d2d2d;
@@ -32,13 +33,16 @@
     --gradient-start: #6d8dff;
     --gradient-end: #8a2be2;
     --navbar-bg-color-rgb: 30, 30, 30;
-    /* for navbar in dark mode */
 }
 
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+/* ============================================================
+   Fonts
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Global Styles */
+/* ============================================================
+   Reset & Global
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -71,7 +75,6 @@ body.light-mode {
     --text-color: #000;
     --shadow-color: rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    color: var(--text-color);
 }
 
 body.dark-mode {
@@ -79,10 +82,11 @@ body.dark-mode {
     --text-color: #fff;
     --shadow-color: rgba(255, 255, 255, 0.2);
     background-color: #121212;
-    color: var(--text-color);
 }
 
-/* --- Main Navbar --- */
+/* ============================================================
+   Navbar
+   ============================================================ */
 #main-navbar {
     background: transparent !important;
     box-shadow: none;
@@ -97,7 +101,6 @@ body.dark-mode {
     top: 0;
 }
 
-/* Branding and Links */
 #main-navbar .navbar-brand,
 #main-navbar .nav-link {
     color: var(--text-secondary) !important;
@@ -111,7 +114,6 @@ body.dark-mode {
     font-weight: 700;
 }
 
-/* Layout for nav container */
 .navbar-nav {
     display: flex;
     flex-direction: row;
@@ -123,7 +125,6 @@ body.dark-mode {
     padding: 0;
 }
 
-/* Responsive: stack links on small screens */
 @media (max-width: 991.98px) {
     .navbar-nav {
         flex-direction: column;
@@ -143,18 +144,16 @@ body.dark-mode {
     }
 }
 
-
-
-
-
-
-/* Theme Toggle */
+/* ============================================================
+   Theme Toggle (button)
+   ============================================================ */
 .theme-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
     background-color: var(--card-bg-color);
+    border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -176,10 +175,9 @@ body.dark-mode {
     transition: all var(--transition-speed);
 }
 
-
-
-/* Header Styles */
-
+/* ============================================================
+   Hero / Header
+   ============================================================ */
 header {
     position: relative;
     height: 100vh;
@@ -189,16 +187,27 @@ header {
     overflow: hidden;
 }
 
-.canvas-container,
+/* Three.js canvas — fixed behind everything */
+.canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Scope canvas sizing to the Three.js bg canvas only */
 #bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    display: block;
 }
-
 
 .hero-person-container {
     position: relative;
@@ -220,24 +229,19 @@ header {
     height: 100%;
     object-fit: contain;
     display: block;
-
 }
 
 .hero-content-on-board {
     position: absolute;
     top: 63.5%;
-    /* Adjust this to match the board */
     left: 45.5%;
-    /* Center horizontally */
     transform: translate(-50%, -50%);
     width: 350px;
     text-align: center;
     padding: 12px 10px 8px 8px;
     border-radius: 6px;
     z-index: 2;
-
 }
-
 
 .hero-content-on-board h1 {
     font-size: 2.4rem;
@@ -247,15 +251,6 @@ header {
     color: transparent;
     font-weight: 800;
     margin-top: 17px;
-
-}
-
-.hero-content-on-board h2 {
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: #6d8dff;
-    margin-top: 15px;
-
 }
 
 .hero-content-on-board h3 {
@@ -265,7 +260,6 @@ header {
     color: white;
 }
 
-
 .hero-content-on-board .icon-row {
     display: flex;
     justify-content: center;
@@ -274,7 +268,6 @@ header {
 }
 
 .hero-content-on-board .icon-row a {
-    color: var(--text-color);
     font-size: 1.5rem;
     color: white;
     transition: all var(--transition-speed);
@@ -285,10 +278,20 @@ header {
     transform: translateY(-3px);
 }
 
-/* Section Styles */
+/* ============================================================
+   Section Scroll-Reveal Animation
+   ============================================================ */
 section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
     padding: 80px 0;
     position: relative;
+}
+
+section.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-title {
@@ -307,25 +310,12 @@ section {
     transform: translateX(-50%);
     width: 70px;
     height: 4px;
-    /* background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); */
     border-radius: 2px;
 }
 
-#model-container {
-    width: 100%;
-    height: auto;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-canvas {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-}
-
-
-/* About Section */
+/* ============================================================
+   About Section
+   ============================================================ */
 .about-content {
     display: flex;
     justify-content: center;
@@ -346,7 +336,9 @@ canvas {
     color: var(--text-secondary);
 }
 
-/* Skills Section */
+/* ============================================================
+   Skills Section
+   ============================================================ */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -405,9 +397,40 @@ canvas {
     transform: scale(1.05);
 }
 
-/* ========== Timeline Section ========== */
-/* Apply box-sizing border-box globally */
-/* Timeline/Experience Section */
+/* ============================================================
+   Experience / Timeline Section
+   ============================================================ */
+
+/* Organisation heading (e.g. "Skillcase", "IEEE WIE") */
+.experience-org-heading {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 40px 0 30px 0;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 2;
+}
+
+.experience-org-subheading {
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Sub-label inside a timeline card (role context line) */
+.timeline-sublabel {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+/* Impact statement at the bottom of each timeline card */
+.impact {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -433,13 +456,8 @@ canvas {
     margin-bottom: 30px;
 }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-}
+.timeline-item:nth-child(odd)  { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
 
 .timeline-item::after {
     content: '';
@@ -452,13 +470,8 @@ canvas {
     z-index: 1;
 }
 
-.timeline-item:nth-child(odd)::after {
-    right: -10px;
-}
-
-.timeline-item:nth-child(even)::after {
-    left: -10px;
-}
+.timeline-item:nth-child(odd)::after  { right: -10px; }
+.timeline-item:nth-child(even)::after { left: -10px; }
 
 .timeline-date {
     position: absolute;
@@ -471,15 +484,8 @@ canvas {
     margin-top: 26px;
 }
 
-.timeline-item:nth-child(odd) .timeline-date {
-    left: 100%;
-    margin-left: 20px;
-}
-
-.timeline-item:nth-child(even) .timeline-date {
-    right: 100%;
-    margin-right: 20px;
-}
+.timeline-item:nth-child(odd) .timeline-date  { left: 100%;  margin-left: 20px; }
+.timeline-item:nth-child(even) .timeline-date { right: 100%; margin-right: 20px; }
 
 .timeline-content {
     padding: 20px;
@@ -527,7 +533,7 @@ canvas {
     font-weight: bold;
 }
 
-/* Responsive Design */
+/* Timeline — mobile */
 @media (max-width: 768px) {
     .timeline::after {
         left: 8px;
@@ -544,6 +550,11 @@ canvas {
         right: auto;
     }
 
+    .timeline-item:nth-child(odd)::after,
+    .timeline-item:nth-child(even)::after {
+        left: 21px;
+    }
+
     .timeline-date {
         position: relative;
         left: auto !important;
@@ -554,33 +565,11 @@ canvas {
     }
 }
 
-
-
-/* Projects Section */
-/* Projects Section */
-#projects {
-    padding: 80px 0;
-    position: relative;
-}
-
-#projects .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-    color: var(--text-color);
-}
-
+/* ============================================================
+   Projects Section
+   ============================================================ */
 #projects .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 4px;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-    border-radius: 2px;
 }
 
 .projects-container {
@@ -600,13 +589,13 @@ canvas {
     height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(var(--primary-color), 0.1);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 25px var(--shadow-color);
-    border-color: rgba(var(--primary-color), 0.3);
+    border-color: rgba(var(--primary-color-rgb), 0.3);
 }
 
 .project-content {
@@ -667,13 +656,13 @@ canvas {
     display: inline-flex;
     align-items: center;
     padding: 8px 15px;
-    background: rgba(var(--primary-color), 0.1);
+    background: rgba(var(--primary-color-rgb), 0.1);
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 25px;
     font-size: 0.9rem;
     transition: all var(--transition-speed);
-    border: 1px solid rgba(var(--primary-color), 0.2);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
 }
 
 .project-link:hover {
@@ -687,7 +676,6 @@ canvas {
     margin-right: 5px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
     .projects-container {
         grid-template-columns: repeat(2, 1fr);
@@ -695,9 +683,7 @@ canvas {
 }
 
 @media (max-width: 768px) {
-    #projects {
-        padding: 60px 0;
-    }
+    #projects { padding: 60px 0; }
 
     #projects .section-title {
         font-size: 2rem;
@@ -716,20 +702,16 @@ canvas {
 }
 
 @media (max-width: 576px) {
-    #projects .section-title {
-        font-size: 1.8rem;
-    }
+    #projects .section-title { font-size: 1.8rem; }
 
-    .project-links {
-        flex-direction: column;
-    }
+    .project-links { flex-direction: column; }
 
-    .project-link {
-        justify-content: center;
-    }
+    .project-link { justify-content: center; }
 }
 
-/* Education Section */
+/* ============================================================
+   Education Section
+   ============================================================ */
 .education-card {
     background-color: var(--card-bg-color);
     border-radius: 10px;
@@ -762,7 +744,9 @@ canvas {
     margin-bottom: 10px;
 }
 
-/* Certifications Section */
+/* ============================================================
+   Certifications Section
+   ============================================================ */
 .certifications-container {
     display: flex;
     flex-wrap: wrap;
@@ -785,7 +769,9 @@ canvas {
     transform: translateY(-5px);
 }
 
-/* Contact Section */
+/* ============================================================
+   Contact Section
+   ============================================================ */
 .contact-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -876,130 +862,56 @@ canvas {
     box-shadow: 0 5px 15px rgba(74, 108, 247, 0.4);
 }
 
-/* Footer */
+/* ============================================================
+   Footer
+   ============================================================ */
 footer {
     width: 100vw;
-    /* Make footer as wide as the viewport */
     min-width: 100vw;
     margin-left: calc(50% - 50vw);
-    /* Center the footer if the body is centered */
     background: #18181b;
-    /* Or your preferred footer background */
     padding: 16px 0;
-    /* Adjust as needed */
     text-align: center;
     box-sizing: border-box;
 }
-
 
 footer p {
     color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
-/* Animations */
+/* ============================================================
+   Animations
+   ============================================================ */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Styles */
+/* ============================================================
+   Responsive — general
+   ============================================================ */
 @media (max-width: 992px) {
-    .header-content h1 {
-        font-size: 3rem;
-    }
-
-    .header-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-    }
+    .section-title { font-size: 2.2rem; }
 }
 
 @media (max-width: 768px) {
-    .timeline::after {
-        left: 31px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-
-    .timeline-item:nth-child(even) {
-        left: 0;
-    }
-
-    .timeline-item::after {
-        left: 21px;
-    }
-
-    .timeline-item:nth-child(odd)::after {
-        right: auto;
-        left: 21px;
-    }
-
-    .timeline-item:nth-child(even)::after {
-        left: 21px;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-date,
-    .timeline-item:nth-child(even) .timeline-date {
-        right: auto;
-        left: 70px;
-        top: -30px;
-        position: relative;
-    }
-
-    .header-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .header-content h2 {
-        font-size: 1.3rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
+    .section-title { font-size: 2rem; }
 }
 
 @media (max-width: 576px) {
-    .header-content h1 {
-        font-size: 2rem;
-    }
-
-    .header-content h2 {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
+    .section-title { font-size: 1.8rem; }
+    .contact-container { grid-template-columns: 1fr; }
 }
 
-/* Additional 3D Effects */
-.skill-category,
-.project-card,
-.timeline-content,
-.education-card,
-.certification-item,
-.contact-form {
-    transform-style: preserve-3d;
+/* ============================================================
+   Card 3D hover effect
+   (perspective must be on the parent, not the element itself)
+   ============================================================ */
+.skills-container,
+.projects-container,
+.timeline,
+.certifications-container {
     perspective: 1000px;
 }
 
@@ -1010,46 +922,17 @@ footer p {
     transform: translateY(-5px) rotateX(5deg);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
+/* ============================================================
+   Custom Scrollbar
+   ============================================================ */
+::-webkit-scrollbar       { width: 10px; }
+::-webkit-scrollbar-track { background: var(--background-color); }
+::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gradient-end); }
 
-::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient-end);
-}
-
-/* Canvas in Background Only */
-.canvas-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-#bg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-
-/* Expand Container on Wide Screens */
+/* ============================================================
+   Wide screen
+   ============================================================ */
 @media (min-width: 1600px) {
-    .container {
-        width: 95%;
-    }
+    .container { width: 95%; }
 }
