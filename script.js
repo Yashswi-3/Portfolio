@@ -251,6 +251,22 @@ function smoothScrollToTarget(event) {
 function initContactForm() {
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+    const submitBtn = form ? form.querySelector('.submit-btn') : null;
+    const honeypotInput = form ? form.querySelector('input[name="company"]') : null;
+    const MIN_SUBMIT_INTERVAL_MS = 12000;
+    let isSubmitting = false;
+    let lastSubmittedAt = 0;
+
+    const setSubmitState = (submitting) => {
+        if (!submitBtn) {
+            return;
+        }
+
+        submitBtn.disabled = submitting;
+        submitBtn.setAttribute('aria-disabled', String(submitting));
+        submitBtn.textContent = submitting ? 'Sending...' : 'Send Message';
+    };
+
     const explainEmailJsError = (error) => {
         const status = error && (error.status || error.statusCode);
         const text = error && typeof error.text === 'string' ? error.text.trim() : '';
@@ -296,14 +312,43 @@ function initContactForm() {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        if (isSubmitting) {
+            return;
+        }
+
+        if (honeypotInput && honeypotInput.value.trim() !== '') {
+            if (formStatus) {
+                formStatus.classList.remove('is-error');
+                formStatus.classList.add('is-success');
+                formStatus.textContent = 'Message sent successfully. Thank you for reaching out.';
+            }
+            form.reset();
+            return;
+        }
+
+        const msSinceLastSubmit = Date.now() - lastSubmittedAt;
+        if (lastSubmittedAt !== 0 && msSinceLastSubmit < MIN_SUBMIT_INTERVAL_MS) {
+            if (formStatus) {
+                const secondsLeft = Math.ceil((MIN_SUBMIT_INTERVAL_MS - msSinceLastSubmit) / 1000);
+                formStatus.classList.remove('is-success');
+                formStatus.classList.add('is-error');
+                formStatus.textContent = `Please wait ${secondsLeft} seconds before sending another message.`;
+            }
+            return;
+        }
+
         if (formStatus) {
             formStatus.classList.remove('is-success', 'is-error');
             formStatus.textContent = 'Sending message...';
         }
 
+        isSubmitting = true;
+        setSubmitState(true);
+
         try {
             await emailjs.sendForm('service_lym9hkq', 'template_gobzfaa', form);
             form.reset();
+            lastSubmittedAt = Date.now();
             if (formStatus) {
                 formStatus.classList.remove('is-error');
                 formStatus.classList.add('is-success');
@@ -317,6 +362,9 @@ function initContactForm() {
                 formStatus.textContent = `Message failed: ${reason} Please try again or email me directly.`;
             }
             console.error('EmailJS error:', error);
+        } finally {
+            isSubmitting = false;
+            setSubmitState(false);
         }
     });
 }
