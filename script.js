@@ -3,6 +3,7 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const navbar = document.getElementById('main-navbar');
 const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+const themeToggleDefaultParent = themeToggle ? themeToggle.parentElement : null;
 
 function applyTheme(theme) {
     const isDark = theme === 'dark';
@@ -30,6 +31,44 @@ function toggleTheme() {
     const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
     applyTheme(nextTheme);
     localStorage.setItem('theme', nextTheme);
+}
+
+function updateThemeTogglePlacement() {
+    if (!themeToggle || !themeToggleDefaultParent) {
+        return;
+    }
+
+    const isMobileOrTablet = window.matchMedia('(max-width: 992px)').matches;
+
+    if (isMobileOrTablet) {
+        if (themeToggle.parentElement !== document.body) {
+            document.body.appendChild(themeToggle);
+        }
+        themeToggle.classList.add('theme-toggle-floating');
+        return;
+    }
+
+    if (themeToggle.parentElement !== themeToggleDefaultParent) {
+        themeToggleDefaultParent.appendChild(themeToggle);
+    }
+    themeToggle.classList.remove('theme-toggle-floating');
+}
+
+function initResponsiveThemeToggle() {
+    if (!themeToggle || !themeToggleDefaultParent) {
+        return;
+    }
+
+    updateThemeTogglePlacement();
+
+    const viewportQuery = window.matchMedia('(max-width: 992px)');
+    const handleViewportChange = () => updateThemeTogglePlacement();
+
+    if (typeof viewportQuery.addEventListener === 'function') {
+        viewportQuery.addEventListener('change', handleViewportChange);
+    } else if (typeof viewportQuery.addListener === 'function') {
+        viewportQuery.addListener(handleViewportChange);
+    }
 }
 
 function initThreeJSBackground() {
@@ -371,6 +410,7 @@ function initContactForm() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initResponsiveThemeToggle();
     initThreeJSBackground();
     initReveal();
     initContactForm();
