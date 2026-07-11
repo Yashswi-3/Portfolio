@@ -647,6 +647,10 @@ body:not(.dark-mode) .tag-cluster span {
     padding: 1.25rem;
 }
 
+#experience .experience-entry + .experience-entry {
+    margin-top: 2.5rem;
+}
+
 .experience-meta {
     display: flex;
     flex-wrap: wrap;

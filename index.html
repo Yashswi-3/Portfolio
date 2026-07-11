@@ -122,7 +122,7 @@
                             </div>
 
                             <p class="hero-description">
-                                I'm an AI engineer who builds from the ground up data pipelines, realtime systems, deployed products. With a foundation in Computer Vision and NLP, a published IEEE research paper, and hands on experience in a Founder's Office, I don't just train models <br>— I ship systems that work in the real world.
+                                I build AI systems that work in the real world, not just in demos — spanning computer vision, natural language processing, and production pipelines. My work is backed by a published research paper and hands-on experience building inside a startup Founder's Office.
                             </p>
                         </div>
                     </div>
@@ -349,56 +349,106 @@
 
         <section id="experience" class="section">
             <div class="container">
-                <header class="section-header reveal">
-                    <p class="kicker">Experience</p>
-                    <h2>Skillcase | Founder's Office Internship</h2>
-                    <p>
-                        Startup execution across product ownership, system building, and day-to-day cross-functional delivery.
-                    </p>
-                </header>
+                <div class="experience-entry reveal">
+                    <header class="section-header">
+                        <p class="kicker">Experience</p>
+                        <h2>CXO1.ai | Founder's Office, Automation &amp; Growth Internship</h2>
+                        <p>
+                            Startup execution across automation, QA, growth, and client delivery for AI-visibility audits.
+                        </p>
+                    </header>
 
-                <article class="experience-card reveal">
-                    <div class="experience-meta">
-                        <p class="role">Product and Operations Intern</p>
-                        <p class="duration">July 2025 - Feb 2026</p>
-                    </div>
-
-                    <div class="experience-grid">
-                        <div>
-                            <h3>Product Ownership</h3>
-                            <ul>
-                                <li>Owned requirement translation for mobile app and web platform versions.</li>
-                                <li>Prioritized feature rollout across V1 to V3 with founder and developer alignment.</li>
-                                <li>Validated deliverables through structured UAT and release readiness checks.</li>
-                            </ul>
+                    <article class="experience-card">
+                        <div class="experience-meta">
+                            <p class="role">Founder's Office, Automation &amp; Growth</p>
+                            <p class="duration">Apr 2026 - Present</p>
                         </div>
 
-                        <div>
-                            <h3>System Building</h3>
-                            <ul>
-                                <li>Supported end-to-end launch of a learning app used by active students and teachers.</li>
-                                <li>Drove regression testing, bug reporting, and post-release issue tracking loops.</li>
-                                <li>Helped shape mobile-first web updates for usability and reliability improvements.</li>
-                            </ul>
+                        <div class="experience-grid">
+                            <div>
+                                <h3>Automation Pipeline</h3>
+                                <ul>
+                                    <li>Built and operate a nine-stage Python pipeline that automates AI-visibility audits by querying ChatGPT, Claude, and Gemini through their APIs, replacing a manual process capped at about 24 audits a day.</li>
+                                    <li>Wired in Anthropic, OpenAI, and Google Gemini APIs, enforcing a hard per-audit cost ceiling after usage-based costs proved harder to predict than expected.</li>
+                                    <li>Built the scoring engine behind each audit -- five weighted metrics (Citation Frequency, Position, Accuracy, Entity Clarity, Technical Accessibility) computed from 15 parsed query-platform responses per company.</li>
+                                    <li>Generated print-ready HTML templates for client-facing audit reports and follow-up action plans, auto-populated per engagement.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Methodology, QA &amp; Validation</h3>
+                                <ul>
+                                    <li>Helped implement Citation Architecture, a four-layer AI-visibility framework (Entity Foundation, Content Retrievability, Source Authority, Technical Accessibility) underlying every audit.</li>
+                                    <li>Validated the pipeline against live companies, with automated scores landing within a point of manual baselines on early runs.</li>
+                                    <li>Found and fixed a data-integrity bug that reported directory profiles as absent based on an indirect signal rather than a verified check, replacing it with a tiered confidence system now standard across every report.</li>
+                                    <li>Resolved further defects surfaced through live testing, including a JSON-parsing crash and a print-pagination bug in the report templates.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Go-to-Market &amp; Operations</h3>
+                                <ul>
+                                    <li>Researched target industries and helped define a seven-segment ICP framework spanning startups, SaaS, FinTech, legal, and healthtech companies.</li>
+                                    <li>Ran cold email outreach across four ICP segments using Instantly.ai to support B2B client acquisition.</li>
+                                    <li>Contributed to a nine-file internal knowledge base covering methodology, market intelligence, and delivery procedures for the practice.</li>
+                                    <li>Authored audit reports, competitive analyses, and internal documentation to support client delivery.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="experience-entry reveal">
+                    <header class="section-header">
+                        <h2>Skillcase | Founder's Office Internship</h2>
+                        <p>
+                            Startup execution across product ownership, system building, and day-to-day cross-functional delivery.
+                        </p>
+                    </header>
+
+                    <article class="experience-card">
+                        <div class="experience-meta">
+                            <p class="role">Product and Operations Intern</p>
+                            <p class="duration">July 2025 - Feb 2026</p>
                         </div>
 
-                        <div>
-                            <h3>Cross-Functional Execution</h3>
-                            <ul>
-                                <li>Acted as communication bridge between founders, developers, and operations teams.</li>
-                                <li>Managed scheduling and student workflows for live class operations.</li>
-                                <li>Created educational social content to support growth and brand engagement.</li>
-                            </ul>
-                        </div>
-                    </div>
+                        <div class="experience-grid">
+                            <div>
+                                <h3>Product Ownership</h3>
+                                <ul>
+                                    <li>Owned requirement translation for mobile app and web platform versions.</li>
+                                    <li>Prioritized feature rollout across V1 to V3 with founder and developer alignment.</li>
+                                    <li>Validated deliverables through structured UAT and release readiness checks.</li>
+                                </ul>
+                            </div>
 
-                    <div class="card-links experience-actions">
-                        <a href="https://drive.google.com/file/d/1ssypwWl1n2gnbPWuICUJkjdI-upOhIbm/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-                            class="card-link">
-                            <i class="fas fa-certificate"></i> Certificate
-                        </a>
-                    </div>
-                </article>
+                            <div>
+                                <h3>System Building</h3>
+                                <ul>
+                                    <li>Supported end-to-end launch of a learning app used by active students and teachers.</li>
+                                    <li>Drove regression testing, bug reporting, and post-release issue tracking loops.</li>
+                                    <li>Helped shape mobile-first web updates for usability and reliability improvements.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Cross-Functional Execution</h3>
+                                <ul>
+                                    <li>Acted as communication bridge between founders, developers, and operations teams.</li>
+                                    <li>Managed scheduling and student workflows for live class operations.</li>
+                                    <li>Created educational social content to support growth and brand engagement.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-links experience-actions">
+                            <a href="https://drive.google.com/file/d/1ssypwWl1n2gnbPWuICUJkjdI-upOhIbm/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                <i class="fas fa-certificate"></i> Certificate
+                            </a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
